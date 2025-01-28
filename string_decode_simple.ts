@@ -18,8 +18,8 @@ function decodeString(str: string) : string {
         return str
     }
 
-    const splitted = str.split(/[\[\]]/)
-    // console.log("str.split(): " + splitted)
+    const splitted = str.split(/[\[\]]/) // split by [ ]
+    console.log("str.split(): " + splitted)
 
     outputString = splitted[1].repeat(Number.parseInt(splitted[0]))+splitted[2]
 
