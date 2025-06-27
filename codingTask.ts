@@ -7,11 +7,11 @@ Input Example:
 */
 
 const testCases = [
-    { id: 1, description: "Login with valid credentials", status: "passed" },
-    { id: 2, description: "Login with invalid credentials", status: "failed" },
-    { id: 3, description: "Forgot password flow", status: "skipped" },
-    { id: 4, description: "Update profile", status: "passed" },
-    { id: 5, description: "Delete account", status: "failed" },
+  { id: 1, description: "Login with valid credentials", status: "passed" },
+  { id: 2, description: "Login with invalid credentials", status: "failed" },
+  { id: 3, description: "Forgot password flow", status: "skipped" },
+  { id: 4, description: "Update profile", status: "passed" },
+  { id: 5, description: "Delete account", status: "failed" },
 ];
 
 /* Output Example:
@@ -30,53 +30,52 @@ const testCases = [
     }
 }   */
 
-function testsSummary(testCases) {  
+function testsSummary(testCases) {
+  const output: {
+    passed: {
+      count: number;
+      descriptions: string[];
+    };
+    failed: {
+      count: number;
+      descriptions: string[];
+    };
+    skipped: {
+      count: number;
+      descriptions: string[];
+    };
+  } = {
+    passed: {
+      count: 0,
+      descriptions: [],
+    },
+    failed: {
+      count: 0,
+      descriptions: [],
+    },
+    skipped: {
+      count: 0,
+      descriptions: [],
+    },
+  };
 
-    const output : {
-        passed: {
-            count: number,
-            descriptions: string []
-        }
-        failed: {
-            count: number,
-            descriptions: string []
-        }
-        skipped: {
-            count: number,
-            descriptions: string []
-        }
-    } = {
-        passed: {
-            count: 0,
-            descriptions: []
-        },
-        failed: {
-            count: 0,
-            descriptions: []
-        },
-        skipped: {
-            count: 0,
-            descriptions: []
-        }
-    } 
+  testCases.forEach((testCase) => {
+    // console.log(`ID: ${testCase.id}, Description: ${testCase.description}, Status: ${testCase.status}`);
+    if (testCase.status === "passed") {
+      output.passed.count++;
+      output.passed.descriptions.push(testCase.description);
+    }
+    if (testCase.status === "failed") {
+      output.failed.count++;
+      output.failed.descriptions.push(testCase.description);
+    }
+    if (testCase.status === "skipped") {
+      output.skipped.count++;
+      output.skipped.descriptions.push(testCase.description);
+    }
+  });
 
-    testCases.forEach(testCase => {
-        // console.log(`ID: ${testCase.id}, Description: ${testCase.description}, Status: ${testCase.status}`);
-        if (testCase.status === "passed") {
-            output.passed.count++
-            output.passed.descriptions.push(testCase.description)
-        }
-        if (testCase.status === "failed") {
-            output.failed.count++
-            output.failed.descriptions.push(testCase.description)
-        }
-        if (testCase.status === "skipped") {
-            output.skipped.count++
-            output.skipped.descriptions.push(testCase.description)
-        }
-    });
-
-    return output;
+  return output;
 }
 
-console.log(testsSummary(testCases))
+console.log(testsSummary(testCases));

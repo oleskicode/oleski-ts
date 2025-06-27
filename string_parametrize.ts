@@ -2,15 +2,15 @@
 // console.log(string_parameterize("Robin from USA.")) // "robin-from-usa"
 
 function string_parameterize(str: string): string {
-    let inputArray = str.split(" ")
-    inputArray = inputArray.map(item => item.toLowerCase())
-    inputArray = inputArray.map(item => item.replace(/[.,?!:;]/g, '')) // cleanup
+  let inputArray = str.split(" ");
+  inputArray = inputArray.map((item) => item.toLowerCase());
+  inputArray = inputArray.map((item) => item.replace(/[.,?!:;]/g, "")); // cleanup
 
-    let outputString = inputArray.join("-")
-    // console.log(inputArray)
+  let outputString = inputArray.join("-");
+  // console.log(inputArray)
 
-    return outputString
+  return outputString;
 }
 
-console.log(string_parameterize("Robin from USA.")) // "robin-from-usa"
-console.log(string_parameterize("Apple!.. From the TREE?")) // "apple-from-the-tree"
+console.log(string_parameterize("Robin from USA.")); // "robin-from-usa"
+console.log(string_parameterize("Apple!.. From the TREE?")); // "apple-from-the-tree"

@@ -1,8 +1,8 @@
 // Hide/mask email addresses
 
 function maskEmail(email: string): string {
-    let maskedEmail = email.slice(0,3) + "***" + email.slice(email.indexOf("@"))
-    return maskedEmail
+  let maskedEmail = email.slice(0, 3) + "***" + email.slice(email.indexOf("@"));
+  return maskedEmail;
 }
 
 console.log(maskEmail("apple1@example.com"));

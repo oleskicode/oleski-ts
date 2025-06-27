@@ -2,26 +2,26 @@
 // Input: (1234, 12345)
 // Result: ("female", "male")
 
-const inputArray = [1234, 12345, 57, 67]
-console.log(inputArray)
+const inputArray = [1234, 12345, 57, 67];
+console.log(inputArray);
 
 // using forEach
-let resultArray: string [] = []
+let resultArray: string[] = [];
 inputArray.forEach((number) => {
-    if (Math.floor(number / 10) % 2 === 0) {
-        resultArray.push("male")
-    } else {
-        resultArray.push("female")
-    }
-})
-console.log(resultArray)
+  if (Math.floor(number / 10) % 2 === 0) {
+    resultArray.push("male");
+  } else {
+    resultArray.push("female");
+  }
+});
+console.log(resultArray);
 
 // using map
 let mappedArray = inputArray.map((number) => {
-    if ( Math.floor(number / 10) % 2 === 0) {
-        return "male"
-    } else {
-        return "female"
-    }
-})
-console.log(mappedArray)
+  if (Math.floor(number / 10) % 2 === 0) {
+    return "male";
+  } else {
+    return "female";
+  }
+});
+console.log(mappedArray);

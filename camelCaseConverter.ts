@@ -4,27 +4,27 @@
 // "The_Stealth-Warrior" gets converted to "TheStealthWarrior"
 
 function toCamelCase(str: string): string {
-    let finalString: string [] = []
-    let nextItemMustBeCapitalized = false
+  let finalString: string[] = [];
+  let nextItemMustBeCapitalized = false;
 
-    let inputArray = str.split("")
-    // console.log(inputArray)
-    inputArray.forEach((char) => {
-        if (nextItemMustBeCapitalized === true) {
-            char = char.toUpperCase()
-            nextItemMustBeCapitalized = false
-        }
-        if ( char === "-" || char === "_") {
-            nextItemMustBeCapitalized = true
-            // console.log("nextItemMustBeCapitalized = true")
-        } else {
-            finalString.push(char)
-        }
-    })
+  let inputArray = str.split("");
+  // console.log(inputArray)
+  inputArray.forEach((char) => {
+    if (nextItemMustBeCapitalized === true) {
+      char = char.toUpperCase();
+      nextItemMustBeCapitalized = false;
+    }
+    if (char === "-" || char === "_") {
+      nextItemMustBeCapitalized = true;
+      // console.log("nextItemMustBeCapitalized = true")
+    } else {
+      finalString.push(char);
+    }
+  });
 
-    return finalString.join("")
+  return finalString.join("");
 }
 
-console.log(toCamelCase("the-stealth-warrior"))
-console.log(toCamelCase("The_Stealth_Warrior"))
-console.log(toCamelCase("The_Stealth-Warrior"))
+console.log(toCamelCase("the-stealth-warrior"));
+console.log(toCamelCase("The_Stealth_Warrior"));
+console.log(toCamelCase("The_Stealth-Warrior"));

@@ -1,13 +1,14 @@
 // function to replace specific char in string
 
 function replaceChar(inputString: string, index: number, newChar: string) {
-    let outputString = inputString
+  let outputString = inputString;
 
-    outputString = inputString.slice(0, index) + newChar + inputString.slice(index + 1 )
+  outputString =
+    inputString.slice(0, index) + newChar + inputString.slice(index + 1);
 
-    return outputString 
+  return outputString;
 }
 
-console.log(replaceChar("epple", 0, "a"))
-console.log(replaceChar("bonana", 1, "a"))
-console.log(replaceChar("coconud", 6, "t"))
+console.log(replaceChar("epple", 0, "a"));
+console.log(replaceChar("bonana", 1, "a"));
+console.log(replaceChar("coconud", 6, "t"));
